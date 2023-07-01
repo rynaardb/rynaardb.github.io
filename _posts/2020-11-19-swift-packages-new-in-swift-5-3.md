@@ -45,7 +45,7 @@ This was one of the key features that was missing in earlier versions of Swift a
 
 Adding resources to a package is pretty straightforward - simply create a new file or add an existing file in your package folder under your package's Sources folder:
 
-![image](/assets/images/swift-packages-adding-resources-in-xcode.png)
+![image](/assets/images/swift-packages-adding-resources-in-xcode.webp)
 
 ### Resource file types
 
@@ -197,7 +197,7 @@ Next, we need to create a localization directory for our default localization:
 2. Create a `Localizable.strings` file
 3. Add you localized string keys
 
-![image](/assets/images/swift-packages-adding-localization-directories.png)
+![image](/assets/images/swift-packages-adding-localization-directories.webp)
 
 > Repeat the steps above for all other languages your package will support.
 {: .prompt-tip }

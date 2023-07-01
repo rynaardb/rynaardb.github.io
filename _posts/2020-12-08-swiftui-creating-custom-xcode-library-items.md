@@ -91,7 +91,7 @@ And just like that, we have now extended the Xcode library with our custom round
 
 Click on the "+" icon in Xcode to open the library (⇧ + ⌘ + L) and make sure you have "Show the views library" selected.
 
-![image](/assets/images/xcode-library-items-views.png)
+![image](/assets/images/xcode-library-items-views.webp)
 *Our custom rounded button is now showing up together with all the other system provided views.*
 
 > Remember, views do not have to correspond to library items one-to-one, meaning that you can have multiple library items representing views in different configurations. 
@@ -140,7 +140,7 @@ Again, just like that, we have now also extended the Xcode library with our cust
 
 Click on the "+" icon in Xcode to open the library (⇧ + ⌘ + L). This time around, make sure you have "Show the Modifiers library" selected.
 
-![image](/assets/images/xcode-library-items-view-modifiers.png)
+![image](/assets/images/xcode-library-items-view-modifiers.webp)
 *Our custom view modifier is now showing up together with all the other system-provided view modifiers.*
 
 ## What about Swift Packages?

@@ -96,7 +96,7 @@ name: CI
 
 This translates to the name shown on GitHub, under the Actions menu:
 
-![image](/assets/images/github-actions-workflow-name.png)
+![image](/assets/images/github-actions-workflow-name.webp)
 
 ### Triggers
 
@@ -189,7 +189,7 @@ Similarly, we also have steps to automatically build our app, run the unit tests
 
 On GitHub, this translates to:
 
-![image](/assets/images/github-actions-workflow-steps.png)
+![image](/assets/images/github-actions-workflow-steps.webp)
 
 ## Community-powered actions
 
@@ -211,7 +211,7 @@ GitHub will detect that we have a workflow definition in `.github/workflows/` an
 
 Navigate to the **Actions** menu on GitHub and see your workflow in action:
 
-![image](/assets/images/github-actions-workflow-running.png)
+![image](/assets/images/github-actions-workflow-running.webp)
 
 ## Conlusion
 
