@@ -33,11 +33,11 @@ The biggest issue with the error description for `ITMS-90683` is that it doesn't
 
 To resolve this, you simply need to manually add another Info.plist under the root level of your Xcode project as seen below:
 
-![image](/assets/images/ITMS-90683-watchos-standalone-app-1.png)
+![image](/assets/images/ITMS-90683-watchos-standalone-app-1.webp)
 
 And then in your Info.plist you need to set the `NSHealthShareUsageDescription` key for the reason/purpose for requesting the permission:
 
-![image](/assets/images/ITMS-90683-watchos-standalone-app-2.png)
+![image](/assets/images/ITMS-90683-watchos-standalone-app-2.webp)
 
 That's it, that will satisfy the App Store Connect upload API and you should be able to upload your App Store / TestFlight builds.
 

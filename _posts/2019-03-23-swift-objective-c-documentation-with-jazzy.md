@@ -146,17 +146,17 @@ jazzy \
 
 What you get is beautiful looking HTML documentation very similar to Apple's official documentation. All with just a few lines of code documentation and markdown:
 
-![image](/assets/images/jazzy-docs-1.png)
+![image](/assets/images/jazzy-docs-1.webp)
 
 ## Other benefits
 
 Another benefit of adding code documentation is that you also get full autocomplete and Quick Help support right in Xcode with no additional effort required.
 
-![image](/assets/images/jazzy-docs-2.png)
+![image](/assets/images/jazzy-docs-2.webp)
 
 To view the Quick Help you can use ⌥ (option) + right-click on a type or function, or alternatively you can also click on the "Show Quick Help inspector" button on the right in Xcode.
 
-![image](/assets/images/jazzy-docs-3.png)
+![image](/assets/images/jazzy-docs-3.webp)
 
 ## Summary
 

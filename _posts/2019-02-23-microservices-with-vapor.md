@@ -43,7 +43,7 @@ Microservices offers several benefits some of which includes:
 
 As illustrated below, the API Gateway is the external interface and entry point to communicate with all the internal services, similar to the [Facade](https://en.wikipedia.org/wiki/Facade_pattern) pattern in object-orientated design:
 
-![image](/assets/images/microservices-api-gateway.png)
+![image](/assets/images/microservices-api-gateway.webp)
 
 It is the API Gateway's responsibility to check and route each request to the corresponding internal services. The API Gateway might have other responsibilities such as authentication, access control, monitoring, logging, caching, load balancing, request shaping, etc.
 
@@ -89,7 +89,7 @@ Each service in the Microservices architecture would expose their REST API that'
 
 The following diagram illustrates how each of the microservices communicates with each other:
 
-![image](/assets/images/microservices-service-communication.png)
+![image](/assets/images/microservices-service-communication.webp)
 
 Each functional area of the application is implemented by its microservice exposing a REST API consumed by other services. For example, the user service invokes the order service to retrieve order information for the given user.
 
