@@ -5,9 +5,7 @@ date: 2023-06-09
 categories: ai
 tags: ai artificial-intelligence nlp natural-language-processing ml machine-learning deep-learning nural-network
 image:
-    path: /assets/images/ai.png
-    teaser: /assets/images/ai.png
-classes: wide
+    path: /assets/images/ai.webp
 ---
 
 Artificial Intelligence (AI) has rapidly evolved from a concept of science fiction to a transformative technology that is revolutionizing various industries. As AI continues to advance, it is crucial to understand the current trends and potential impact it holds for businesses and society. In this blog post, we will explore the future of artificial intelligence, including key trends, emerging applications, and the potential benefits and challenges it presents.

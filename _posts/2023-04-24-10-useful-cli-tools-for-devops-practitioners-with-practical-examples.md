@@ -5,7 +5,7 @@ date: 2023-04-24
 categories: devops tools
 tags: devops cli-tools command-line terminal homebrew aws kubernets http json fuzzy-search github
 image:
-    path: /assets/images/useful-cli-tools-for-devops-practitioners.png
+    path: /assets/images/useful-cli-tools-for-devops-practitioners.webp
 ---
 
 As a DevOps practitioner, you're probably always on the lookout for ways to improve your workflow and be more productive.

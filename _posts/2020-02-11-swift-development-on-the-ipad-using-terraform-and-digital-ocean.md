@@ -5,7 +5,7 @@ date: 2020-02-11
 categories: swift ipad
 tags: swift ipad remote-development iac infrastructure-as-code terraform digital-ocean ssh mosh
 image:
-    path: /assets/images/ipad-development-terraform-digital-ocean.png
+    path: /assets/images/ipad-development-terraform-digital-ocean.webp
 ---
 
 Since the release of iPadOS 13, the iPad has gained a lot of useful features making it so much more of a viable option for getting real work done. That being said, it still lacks in several areas, especially in the area of Swift development.

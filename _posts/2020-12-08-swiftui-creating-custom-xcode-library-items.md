@@ -5,7 +5,7 @@ date: 2020-12-08
 categories: swiftui
 tags: swift swiftui xcode library
 image:
-    path: /assets/images/swiftui-custom-xcode-library-items.png
+    path: /assets/images/swiftui-custom-xcode-library-items.webp
 ---
 
 The Xcode library is a great way to discover and learn about available SwiftUI views and modifiers and allows you to conveniently drag and drop them to the Xcode Previews canvas without writing any code. 

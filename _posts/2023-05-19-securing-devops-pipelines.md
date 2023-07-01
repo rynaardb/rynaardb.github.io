@@ -5,7 +5,7 @@ date: 2023-05-19
 categories: devops security
 tags: devops pipelines security sast sca iac dast ci-cd owasp
 image:
-    path: /assets/images/securing-devops-pipelines.png
+    path: /assets/images/securing-devops-pipelines.webp
 ---
 
 With the increasing adoption of DevOps practices, organizations are embracing faster software delivery cycles. However, this accelerated pace should not come at the cost of compromising application security. Securing DevOps pipelines is paramount to protect sensitive data, prevent security breaches, and maintain the trust of customers. In this blog post, we will explore best practices for robust application security in DevOps pipelines, covering key areas such as code security, vulnerability management, secure configurations, and automated security testing.

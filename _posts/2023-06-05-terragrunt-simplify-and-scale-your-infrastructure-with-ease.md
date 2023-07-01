@@ -5,8 +5,7 @@ date: 2023-06-05
 categories: devops terraform
 tags: terragrunt terraform iac infrastructure-as-code dry dont-repeat-yourselve
 image:
-    path: /assets/images/terragrunt.png
-    teaser: /assets/images/terragrunt.png
+    path: /assets/images/terragrunt.webp
 ---
 
 In the world of infrastructure as code (IaC), managing complex infrastructure efficiently and consistently can be a daunting task. However, with the advent of tools like [Terragrunt](https://terragrunt.gruntwork.io), this process has become significantly easier. Terragrunt, an open-source tool developed by Gruntwork, is designed to enhance and simplify the usage of [Terraform](https://www.terraform.io), an industry-leading IaC tool. In this blog post, we will explore the benefits of Terragrunt and provide examples of how it can streamline your infrastructure management workflow.

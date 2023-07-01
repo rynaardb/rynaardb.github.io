@@ -5,7 +5,7 @@ date: 2020-07-08
 categories: xcode
 tags: xcode keyboard-shortcuts productivity tips tricks
 image:
-    path: /assets/images/xcode-keyboard-shortcuts.png
+    path: /assets/images/xcode-keyboard-shortcuts.webp
 ---
 
 As iOS developers, we spend a considerable amount of time in Xcode, so it’s worth taking some time to know your way around Xcode.

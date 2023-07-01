@@ -5,7 +5,7 @@ date: 2019-02-08
 categories: swift vapor
 tags: vapor server-side swift
 image:
-    path: /assets/images/vapor-swift.png
+    path: /assets/images/vapor-swift.webp
 ---
 
 Getting started with [Vapor](https://vapor.codes) is easy thanks to the handy Vapor Toolbox and well written [documentation](https://docs.vapor.codes/3.0/).

@@ -5,7 +5,7 @@ date: 2019-03-23
 categories: swift objective-c documentation
 tags: swift objective-c jazzy documentation xcode
 image:
-    path: /assets/images/jazzy-documentation.png
+    path: /assets/images/jazzy-documentation.webp
 ---
 
 [Jazzy](https://github.com/realm/jazzy) is a command-line utility that generates documentation for both Swift and Objective-C. Instead of parsing your source files, jazzy hooks into [Clang](https://clang.llvm.org/) and [SourceKit](https://www.jpsim.com/uncovering-sourcekit) to use the [AST](https://clang.llvm.org/docs/IntroductionToTheClangAST.html) representation of your code and its comments for more accurate results. With a little bit of manual effort and some markdown goodness, you can generate great-looking HTML documentation using jazzy.

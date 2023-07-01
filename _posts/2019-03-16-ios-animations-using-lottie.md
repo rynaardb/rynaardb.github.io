@@ -5,7 +5,7 @@ date: 2019-03-16
 categories: ios
 tags: ios swift lottie animations
 image:
-    path: /assets/images/ios-animations-with-lottie.png
+    path: /assets/images/ios-animations-with-lottie.webp
 ---
 
 [Lottie](https://github.com/airbnb/lottie-ios) is a mobile library for iOS and Android that parses Adobe After Effects animations exported as JSON with [bodymovin](https://github.com/bodymovin/bodymovin) and renders the vector animations natively on mobile and through React Native!
