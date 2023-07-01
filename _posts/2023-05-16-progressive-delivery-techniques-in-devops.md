@@ -5,7 +5,7 @@ date: 2023-05-16
 categories: devops
 tags: devops feature flags canary a-b blue-green deployments traffic-shifting
 image:
-    path: /assets/images/progressive-delivery-techniques-in-devops.png
+    path: /assets/images/progressive-delivery-techniques-in-devops.webp
 ---
 
 In the world of software development and operations, DevOps has emerged as a paradigm shift, facilitating seamless collaboration between development and operations teams to deliver high-quality software at scale. While the basic principles of DevOps, such as automation, continuous integration, and continuous deployment, are well-established, advanced techniques like progressive delivery have gained prominence. 

@@ -5,7 +5,7 @@ date: 2019-02-16
 categories: ios
 tags: ios swift
 image:
-    path: /assets/images/uiview-animations.png
+    path: /assets/images/uiview-animations.webp
 ---
 
 Subtle and concise animations can help draw the user’s attention to a specific area of your application. Often it may be unclear to the user when to perform a certain action or as to what is going on after a specific task / action was completed. This is where well thought out animations can be very useful.

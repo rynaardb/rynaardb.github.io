@@ -5,7 +5,7 @@ date: 2023-03-15
 categories: devops infrastructure
 tags: immutalbe infrastructure iac infrastructure-as-code terraform cloud kubernetes docker
 image:
-    path: /assets/images/immutable-infrastructure.png
+    path: /assets/images/immutable-infrastructure.webp
 ---
 
 In the quest for reliable and scalable infrastructure, Immutable Infrastructure has emerged as a powerful concept. By treating infrastructure as immutable, you can achieve greater resilience, scalability, and security. In this blog post, we will explore the concept of Immutable Infrastructure, its benefits, and best practices for building resilient and scalable systems.

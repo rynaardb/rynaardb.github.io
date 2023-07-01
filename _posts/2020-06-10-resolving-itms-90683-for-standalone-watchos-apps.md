@@ -5,7 +5,7 @@ date: 2020-06-10
 categories: watchOS
 tags: watchos xcode ITMS-90683
 image:
-    path: /assets/images/resolving-itms-90683.png
+    path: /assets/images/resolving-itms-90683.webp
 ---
 
 Early on during the development of my recent standalone watchOS app while adding HealthKit support I stumbled into a very annoying issue. Upon uploading a TestFlight build the App Store Connect upload API will fail with the following error: 

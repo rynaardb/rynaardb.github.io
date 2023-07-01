@@ -5,7 +5,7 @@ date: 2019-02-23
 categories: swift vapor
 tags: vapor server-side swift microservices
 image:
-    path: /assets/images/microservices-with-vapor.png
+    path: /assets/images/microservices-with-vapor.webp
 ---
 
 Microservices have recently got a lot of attention and Vapor provides us with all the needed tools and APIs to create a Microservices architecture relatively easy.

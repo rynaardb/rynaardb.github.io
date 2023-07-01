@@ -5,7 +5,7 @@ date: 2023-05-15
 categories: devops docker
 tags: docker multi-stage-builds image layer optimization
 image:
-    path: /assets/images/docker-multi-stage-builds.png
+    path: /assets/images/docker-multi-stage-builds.webp
 ---
 
 Docker Multi-stage builds is a powerful feature that allows you to build more efficient and smaller Docker images by utilizing multiple stages in the build process. This feature was introduced in Docker 17.05 and has since become a popular practice for optimizing container images.

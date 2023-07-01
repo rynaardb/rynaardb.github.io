@@ -5,7 +5,7 @@ date: 2020-11-19
 categories: swift
 tags: swift package spm swift-package-manager
 image:
-    path: /assets/images/swift-packages.png
+    path: /assets/images/swift-packages.webp
 ---
 
 Following up on one of my [previous article](https://rynaardb.com/posts/2020/01/08/swift-package-manager-creating-packages.html), it is time to revisit Swift Packages and discover what is new in Swift 5.3 and Xcode 12 and how we can take advantage of all the new features.

@@ -5,8 +5,7 @@ date: 2023-06-19
 categories: devops ci-cd
 tags: ai artificial intelligence npl natural-language-processing ml machine-learning deep-learning nural-network devops ci-cd ci cd pipelines build automation
 image:
-    path: /assets/images/leverage-ai-with-ci-cd-pipelines.png
-    teaser: /assets/images/leverage-ai-with-ci-cd-pipelines.png
+    path: /assets/images/leverage-ai-with-ci-cd-pipelines.webp
 ---
 
 In the constantly evolving landscape of software development, efficiency and automation are the driving forces. One of the areas that has seen significant strides in this regard is the implementation of Continuous Integration and Continuous Delivery (CI/CD) pipelines. The integration of Artificial Intelligence (AI) in CI/CD has added another layer of automation and efficiency. In this post, we'll explore how AI can streamline CI/CD pipelines, irrespective of the specific tools used.

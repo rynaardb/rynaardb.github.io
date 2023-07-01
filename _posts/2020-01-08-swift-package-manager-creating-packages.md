@@ -5,7 +5,7 @@ date: 2020-01-08
 categories: swift
 tags: swift spm swift-package-manager packages
 image:
-    path: /assets/images/creating-swift-packages.png
+    path: /assets/images/creating-swift-packages.webp
 ---
 
 Swift Package Manager, or SPM, is a tool for managing the distribution of Swift code. It is also a great tool to manage your project dependencies, allowing you to import third-party frameworks or those you developed yourself.

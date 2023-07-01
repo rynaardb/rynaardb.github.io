@@ -5,7 +5,7 @@ date: 2019-04-02
 categories: swift
 tags: swift functional-programming
 image:
-    path: /assets/images/functional-programming-swift.png
+    path: /assets/images/functional-programming-swift.webp
 ---
 
 [Functional programming](https://en.wikipedia.org/wiki/Functional_programming) is a programming paradigm and perhaps even more so a mindset which helps you structure your programs into separate functions. These functions take some input and return the computed output based on the given input. The most important aspects of functional programming are to prevent side effects and to avoid mutating global state.

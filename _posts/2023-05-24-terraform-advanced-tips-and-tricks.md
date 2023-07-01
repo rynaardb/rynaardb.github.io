@@ -5,7 +5,7 @@ date: 2023-05-24
 categories: devops terraform
 tags: terrafrom iac infrastructure-as-code automation tips tricks
 image:
-    path: /assets/images/terraform-advanced-tips-and-tricks.png
+    path: /assets/images/terraform-advanced-tips-and-tricks.webp
 ---
 
 [Terraform](https://www.terraform.io) is a powerful tool for managing Infrastructure as Code (IaC), allowing you to provision and manage resources efficiently. While the basics of Terraform are relatively straightforward, there are several advanced tips and tricks that can enhance your Terraform workflow and help you optimize your infrastructure automation. In this blog post, we will explore some advanced techniques and best practices to take your Terraform skills to the next level.

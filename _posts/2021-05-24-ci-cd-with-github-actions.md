@@ -5,7 +5,7 @@ date: 2021-05-24
 categories: devops ci-cd
 tags: ci-cd github-actions automation pipeline
 image:
-    path: /assets/images/ci-cd-github-actions.png
+    path: /assets/images/ci-cd-github-actions.webp
 ---
 
 Today's approach to software development requires software to be delivered **frequently**, **reliably**, and **efficiently**. We can achieve this by automating the process using CI/CD pipelines.
