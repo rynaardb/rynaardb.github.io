@@ -60,7 +60,7 @@ myapp/
         └── values.yaml
 ```
 
-> Run the `helm create myapp` command to create a chart directory along with the common files and directories used in a chart.
+> Run the `helm create` command and supply the name of the chart to create a chart directory along with the common files and directories.
 {: .prompt-tip }
 
 ### Chart Dependencies
@@ -121,7 +121,7 @@ helm upgrade myapp ./myapp
 
 ### Uninstalling a Chart
 
-To remove an application and all associated resources, you can use the helm uninstall command followed by the release name:
+To remove an application and all associated resources, you can use the `helm uninstall` command followed by the release name:
 
 ```shell
 helm uninstall myapp
@@ -200,7 +200,6 @@ In the above example, the `range` statement iterates over the `ports` list and g
 You can customize templated values by modifying the `values.yaml` file or by providing a separate value file during installation or upgrade. This allows you to override default values and customize the generated manifests, for example:
 
 ```yaml
-# values.yaml
 replicaCount: 3
 image:
   repository: myapp
@@ -220,5 +219,3 @@ By modifying the values in the `values.yaml` file, you can control the number of
 Helm is a powerful tool that simplifies the deployment and management of applications on Kubernetes clusters. With Helm, you can define reusable charts that encapsulate all the necessary Kubernetes resources and configurations. By using Helm charts, you can easily install, upgrade, and remove applications in a consistent and reproducible manner.
 
 Templating enables you to customize the configuration of your application based on the values provided during installation or upgrade. With the ability to use functions, conditional statements, and loops, you have the flexibility to generate complex configurations that adapt to your specific needs.
-
-Happy Helm-ing!
