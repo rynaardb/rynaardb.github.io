@@ -18,7 +18,7 @@ Helm is a tool that streamlines the installation and management of applications 
 
 ## Installation
 
-Before we dive into using Helm, let's first install it on our local machine or the server where you want to manage your Kubernetes applications. Helm is available for various operating systems, including Linux, macOS, and Windows. Follow the official Helm installation guide for detailed instructions on how to install Helm on your desired platform.
+Before we dive into using Helm, let's first install it on our local machine or the server where you want to manage your Kubernetes applications. Helm is available for various operating systems, including Linux, macOS, and Windows. Follow the [Official Helm Installation Guide](https://helm.sh/docs/intro/install/) for detailed instructions on how to install Helm on your desired platform.
 
 ## Helm Charts
 
@@ -195,12 +195,15 @@ spec:
 
 In the above example, the `range` statement iterates over the `ports` list and generates multiple `port` blocks based on the values provided in the `values.yaml` file.
 
+> See the official documentation for the full list of available Template Functions [here](https://helm.sh/docs/chart_template_guide/function_list/).
+{: .prompt-info }
+
 ### Customizing Template Values
 
 You can customize templated values by modifying the `values.yaml` file or by providing a separate value file during installation or upgrade. This allows you to override default values and customize the generated manifests, for example:
 
 ```yaml
-replicaCount: 3
+replicaCount: 2
 image:
   repository: myapp
   tag: 1.0.0
