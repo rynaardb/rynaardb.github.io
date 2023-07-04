@@ -10,6 +10,8 @@ image:
 
 Docker is a popular containerization platform that allows you to package and run applications in isolated environments called containers. In a multi-container environment, effective networking is crucial for seamless communication between containers and the outside world. Docker provides various network drivers to enable different networking capabilities for containers. In this blog post, we will explore Docker networking and the different network drivers available.
 
+Let's explore the different network drivers available in Docker and how to configure them for various use cases.
+
 ## Understanding Docker Networking
 
 Docker networking allows containers to communicate with each other and with external networks. By default, Docker creates a `bridge` network for each host, allowing containers to communicate with each other on the same host. However, Docker also provides additional network drivers that offer more advanced networking features and flexibility.
