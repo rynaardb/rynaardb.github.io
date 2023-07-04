@@ -1,2 +1,2 @@
 # rynaardb.github.io / rynaardb.com
-Personal blog of Rynaard Burger powered by Jekyll.
+Personal blog of Rynaard Burger, powered by Jekyll.
