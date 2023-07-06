@@ -122,4 +122,4 @@ scrape_configs:
 
 etcd plays a critical role in Kubernetes by serving as a distributed key-value store for storing cluster configuration and state. Understanding the inner workings of etcd, such as its consistency guarantees, leader election, and the Raft consensus algorithm, is essential for operating and troubleshooting Kubernetes clusters.
 
-Additionally, knowing how to interact with etcd, monitor its health, and perform backup and disaster recovery operations empowers cluster administrators to maintain a stable and reliable Kubernetes environment.
+Additionally, knowing how to interact with etcd, monitor its health, and perform backup and disaster recovery operations empowers you to maintain a stable and reliable Kubernetes environment.
