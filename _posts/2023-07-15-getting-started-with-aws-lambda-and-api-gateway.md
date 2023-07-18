@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "A First Look at Serverless Computing - Exploring AWS Lambda"
+title: "Getting Started with AWS Lambda Functions and API Gateway"
 date: 2023-07-15
 categories: serverless aws
-tags: serverless aws lambda
+tags: serverless aws lambda api-gateway go terraform
 image:
     path: /assets/images/aws-lambda.webp
 mermaid: true
@@ -73,9 +73,9 @@ Let's walk through an example of creating a serverless API using AWS Lambda and 
 
 First, you need to install the AWS CLI and AWS SDK for your preferred language. You can find the installation instructions in the AWS Documentation.
 
-### Create a Lambda Function
+### Create a Lambda Function using Go
 
-We'll start by creating a Lambda function in Go:
+We'll start by creating a Lambda function in Go using the [AWS Lambda packages for Go](https://docs.aws.amazon.com/lambda/latest/dg/lambda-golang.html):
 
 ```go
 package main
@@ -153,10 +153,202 @@ Finally, deploy the API Gateway by clicking "Actions" and then "Deploy API". You
 
 Once the API is deployed, you will get an invoke URL. You can use this URL to test the API:
 
-`https://<api-id>.execute-api.<region>.amazonaws.com/dev/user/123`
+```shell
+curl https://<api-id>.execute-api.<region>.amazonaws.com/dev/user/123
+```
 
 >Replace `<api-id>` with your API ID and `<region>` with your AWS region. The final part of the URL (`/user/123`) is the path to the resource and the `userId`.
 {: .prompt-info }
+
+## Automate with Terraform
+
+We can also fully automate the process of creating the Lambda Function and API Gateway using Terraform.
+
+Providers:
+
+```shell
+# Providers
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 5.7.0"
+    }
+
+    archive = {
+      source  = "hashicorp/archive"
+      version = "2.4.0"
+    }
+  }
+
+  required_version = "~> 1.0"
+}
+
+provider "aws" {
+  region = "eu-central-1"
+}
+```
+{: file="providers.tf" }
+
+S3 Bucket:
+
+```shell
+resource "aws_s3_bucket" "lambda_bucket" {
+  bucket_prefix = "lambda-bucket-"
+  force_destroy = true
+}
+
+resource "aws_s3_bucket_public_access_block" "lambda_bucket" {
+  bucket = aws_s3_bucket.lambda_bucket.id
+
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
+}
+```
+{: file="lambda-bucket.tf" }
+
+Lambda Function:
+
+```shell
+# Lambda execution role
+resource "aws_iam_role" "getuserdata_lambda_exec_role" {
+  name = "getuserdata_lambda_exec_role"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = "sts:AssumeRole"
+        Effect = "Allow"
+        Sid    = ""
+        Principal = {
+          Service = "lambda.amazonaws.com"
+        }
+      }
+    ]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "getuserdata_lambda_policy" {
+  role       = aws_iam_role.getuserdata_lambda_exec_role.name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole" # Minumum permissions for function to run
+}
+
+# Lambda function
+resource "aws_lambda_function" "getuserdata" {
+  function_name = "getuserdata"
+
+  s3_bucket = aws_s3_bucket.lambda_bucket.id
+  s3_key    = aws_s3_object.lambda_getuserdata.key
+
+  runtime = "go1.x"
+  handler = "main"
+
+  source_code_hash = data.archive_file.getuserdata.output_base64sha256
+
+  role = aws_iam_role.getuserdata_lambda_exec_role.arn
+}
+
+# CloudWatch Log Group
+resource "aws_cloudwatch_log_group" "getuserdata" {
+  name              = "/aws/lambda/${aws_lambda_function.getuserdata.function_name}"
+  retention_in_days = 14
+}
+
+# Below will typically be handled by CI
+
+# Zip the source code
+data "archive_file" "getuserdata" {
+  type        = "zip"
+  source_dir  = "../${path.module}/getuserdata"
+  output_path = "../${path.module}/getuserdata.zip"
+}
+
+# Upload the zip to S3
+resource "aws_s3_object" "lambda_getuserdata" {
+  bucket = aws_s3_bucket.lambda_bucket.id
+  key    = "getuserdata.zip"
+  source = data.archive_file.getuserdata.output_path
+  etag   = filemd5(data.archive_file.getuserdata.output_path)
+}
+
+```
+{: file="getuserdata-lambda.tf" }
+
+API Gateway:
+
+```shell
+# Gateway
+resource "aws_apigatewayv2_api" "main" {
+  name          = "main"
+  protocol_type = "HTTP"
+}
+
+# Stage
+resource "aws_apigatewayv2_stage" "dev" {
+  api_id      = aws_apigatewayv2_api.main.id
+  name        = "dev"
+  auto_deploy = true
+
+  access_log_settings {
+    destination_arn = aws_cloudwatch_log_group.getuserdata.arn
+    format = jsonencode({
+      requestId               = "$context.requestId"
+      sourceIp                = "$context.identity.sourceIp"
+      requestTime             = "$context.requestTime"
+      httpMethod              = "$context.httpMethod"
+      routeKey                = "$context.routeKey"
+      status                  = "$context.status"
+      protocol                = "$context.protocol"
+      responseLength          = "$context.responseLength"
+      integrationLatency      = "$context.integrationLatency"
+      integrationErrorMessage = "$context.integrationErrorMessage"
+    })
+  }
+}
+
+# CloudWatch Log Group
+resource "aws_cloudwatch_log_group" "main_api_gateway" {
+  name              = "/aws/apigateway/${aws_apigatewayv2_api.main.name}"
+  retention_in_days = 14
+}
+```
+{: file="api-gateway.tf" }
+
+```shell
+# Lamda function integrated with API Gateway
+resource "aws_apigatewayv2_integration" "lambda_getuserdata" {
+  api_id = aws_apigatewayv2_api.main.id
+
+  integration_uri    = aws_lambda_function.getuserdata.invoke_arn
+  integration_type   = "AWS_PROXY"
+  integration_method = "POST" # Forward request to Lambda as POST requests
+}
+
+# GET /user/{userId}
+resource "aws_apigatewayv2_route" "lambda_getuserdata" {
+  api_id = aws_apigatewayv2_api.main.id
+
+  route_key = "GET /user/{userId}"
+  target    = "integrations/${aws_apigatewayv2_integration.lambda_getuserdata.id}"
+}
+
+# Lambda permissions
+resource "aws_lambda_permission" "api_gateway" {
+  statement_id  = "AllowExecutionFromAPIGateway"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.getuserdata.function_name
+  principal     = "apigateway.amazonaws.com"
+  source_arn    = "${aws_apigatewayv2_api.main.execution_arn}/*/*"
+}
+
+output "getuserdata_api_gateway_url" {
+  value = aws_apigatewayv2_stage.dev.invoke_url
+}
+```
+{: file="getuserdata-lambda-api-gateway.tf" }
 
 ## Conclusion
 
