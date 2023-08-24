@@ -3,7 +3,7 @@ layout: post
 title: "Monitoring the SRE Four Golden Signals"
 date: 2023-08-01
 categories: sre devops
-tags: sre devops monitoring observability
+tags: sre devops monitoring observability grafana prometeheus
 image:
     path: /assets/images/prometheus-grafana.webp
 mermaid: true
