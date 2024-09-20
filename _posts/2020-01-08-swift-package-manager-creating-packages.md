@@ -12,7 +12,7 @@ Swift Package Manager, or SPM, is a tool for managing the distribution of Swift 
 
 Now that SPM is a first-class citizen as from Xcode 11 and we are starting to see some adoption, I think it is time to have a deeper look from both a consumer and a library author perspective.
 
-In this post, we’ll have a look at how to get started using SPM creating a basic package that we can share with others or use as a dependency in your own projects. 
+In this post, we’ll have a look at how to get started using SPM creating a basic package that we can share with others or use as a dependency in your own projects.
 
 ## What is a package?
 
@@ -37,7 +37,7 @@ swift package init
 
 ### Types of packages
 
-By default, SPM will initialize a static library package type when running the default initialize command. 
+By default, SPM will initialize a static library package type when running the default initialize command.
 
 You can manually specify the type of package you’d like to create using the `--type` parameter. As of the time of writing this post the following types of packages are supported:
 
@@ -57,7 +57,7 @@ You can run the following command to get a list of  available options when initi
 
 ```shell
 swift package init --help
-```
+```shell
 Output:
 
 ```shell
@@ -83,7 +83,7 @@ import PackageDescription
 let package = Package(
     name: "CipherKit",
     products: [
-        // Products define the executables and libraries produced by a package, and make them visible to other packages.        
+        // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
         name: "CipherKit",
         targets: ["CipherKit"]),
@@ -94,7 +94,7 @@ let package = Package(
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages which this package depends on.        
+        // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
         name: "CipherKit",
         dependencies: []),
@@ -103,7 +103,7 @@ let package = Package(
         dependencies: ["CipherKit"]),
     ]
 )
-```
+```swift
 {: file="Package.swift" }
 
 ## Adding external dependencies
@@ -116,7 +116,7 @@ import PackageDescription
 let package = Package(
     name: "CipherKit",
     products: [
-        // Products define the executables and libraries produced by a package, and make them visible to other packages.        
+        // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
         name: "CipherKit",
         targets: ["CipherKit"]),
@@ -128,7 +128,7 @@ let package = Package(
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages which this package depends on.        
+        // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
         name: "CipherKit",
         dependencies: []),
@@ -137,7 +137,7 @@ let package = Package(
         dependencies: ["CipherKit"]),
     ]
 )
-```
+```shell
 {: file="Package.swift" }
 
 Alternatively, you can also use a local path to refer to a package rather than a published remote version. Simply replace `url` with `path` using the relative path to the package’s folder:
@@ -182,7 +182,7 @@ The initial build might take a few minutes to complete depending on the number o
 
 ## Working in Xcode
 
-Up until this point, we have only been working in terminal to create and build our package. For very basic libraries we could perhaps manage using just an editor like vim or vscode but we’d still lack the more advanced functionally that Xcode offers, for example, code completion and debugging support. 
+Up until this point, we have only been working in terminal to create and build our package. For very basic libraries we could perhaps manage using just an editor like vim or vscode but we’d still lack the more advanced functionally that Xcode offers, for example, code completion and debugging support.
 
 Fortunately, we can also build and debug our library using Xcode. To do so we need to generate an Xcode project:
 
@@ -190,7 +190,7 @@ Fortunately, we can also build and debug our library using Xcode. To do so we ne
   swift package generate-xcodeproj
 ```
 
-This will generate a new `.xcodeproj` file that we open with Xcode just like and other project with full code completion and debugging support. 
+This will generate a new `.xcodeproj` file that we open with Xcode just like and other project with full code completion and debugging support.
 
 > Remember to regenerate your Xcode project every time you add or edit your dependencies.
 {: .prompt-tip }
@@ -213,5 +213,4 @@ SPM still being relatively new and while only recently saw major adoption still 
 ## Resources
 
 - [Swift Packages]( https://developer.apple.com/documentation/swift_packages) - Official Apple documentation for Swift Packages
-- [swiftpm.co](swiftpm.co) - A place to find Swift packages
- 
+- [swiftpm.co](https://swiftpm.co) - A place to find Swift packages
